@@ -1,10 +1,9 @@
 from fastapi import Security, Depends, FastAPI, HTTPException
-from fastapi.security.api_key import APIKeyQuery, APIKeyHeader, APIKey
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
-
-from starlette.status import HTTP_403_FORBIDDEN
+from fastapi.security.api_key import APIKeyQuery, APIKey
 from starlette.responses import JSONResponse
+from starlette.status import HTTP_403_FORBIDDEN
 
 API_KEY_FIELD = "access_token"
 API_KEY = "some_key" # XXX replace by docker secret or something
